@@ -7,7 +7,16 @@
 </head>
 <body>
   <div id="app">
-    <p>{{ message }}</p>
+    <form>
+      <input type="text" v-model="newtodo">
+      <button v-on:click="addTodo">追加</button>
+    </form>
+    <ul>
+      <li v-for="todo in todos">
+        {{todo.item}}
+        <button v-on:click="deleteTodo(todo)">削除</button>
+      </li>
+    </ul>
   </div>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="./app.js"></script>
